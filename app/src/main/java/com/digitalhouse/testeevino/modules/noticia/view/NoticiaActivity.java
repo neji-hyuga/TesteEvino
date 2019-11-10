@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import com.digitalhouse.testeevino.R;
 import com.digitalhouse.testeevino.listener.NoticiaListener;
 import com.digitalhouse.testeevino.model.Noticia;
+import com.digitalhouse.testeevino.modules.detalheNoticia.view.DetalheNoticiaActivity;
 import com.digitalhouse.testeevino.modules.noticia.viewmodel.NoticiaViewModel;
 import com.digitalhouse.testeevino.repository.NoticiaAdapter;
 
@@ -54,10 +55,11 @@ public class NoticiaActivity extends AppCompatActivity implements NoticiaListene
 
     @Override
     public void onNoticiaClick(Noticia noticia) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("NOTICIA", noticia);
+
+        Intent intent = new Intent(this, DetalheNoticiaActivity.class);
 
         intent.putExtras(bundle);
 
