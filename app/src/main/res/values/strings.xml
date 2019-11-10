@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TesteEvino</string>
+    <string name="login">login</string>
+    <string name="n">n.</string>
+    <string name="usuario">usuário</string>
+    <string name="senha">senha</string>
+    <string name="criar_nova_conta">criar nova conta</string>
+</resources>
