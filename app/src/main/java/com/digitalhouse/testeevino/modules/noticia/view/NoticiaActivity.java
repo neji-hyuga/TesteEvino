@@ -23,7 +23,7 @@ public class NoticiaActivity extends AppCompatActivity implements NoticiaListene
 
     private ProgressBar progressBar;
     private RecyclerView noticiaRecyclerView;
-    private String search = "vinhos";
+    private String search = "bitcoin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

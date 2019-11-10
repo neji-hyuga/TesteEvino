@@ -24,7 +24,7 @@ public class DetalheNoticiaActivity extends AppCompatActivity {
 
         webView = findViewById(R.id.detalhe_noticia_web_view_id);
         progressBar = findViewById(R.id.progress_bar_detalhe_noticias);
-        
+
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
