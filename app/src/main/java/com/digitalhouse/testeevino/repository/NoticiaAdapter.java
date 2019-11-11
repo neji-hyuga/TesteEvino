@@ -68,6 +68,7 @@ public class NoticiaAdapter extends RecyclerView.Adapter<NoticiaAdapter.ViewHold
         private TextView tituloTextView;
         private TextView textoTextView;
         private ImageView imagemImageView;
+        private ImageView compartilharBotao;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -75,12 +76,20 @@ public class NoticiaAdapter extends RecyclerView.Adapter<NoticiaAdapter.ViewHold
             tituloTextView = itemView.findViewById(R.id.noticia_titulo_text_view);
             textoTextView = itemView.findViewById(R.id.noticia_texto_text_view);
             imagemImageView = itemView.findViewById(R.id.noticia_imagem_image_view);
+            compartilharBotao = itemView.findViewById(R.id.compartilhar_noticia_btn);
         }
 
         public void bind(Noticia noticia){
             tituloTextView.setText(noticia.getTitle());
             textoTextView.setText(noticia.getDescription());
             Picasso.get().load(noticia.getUrlToImage()).into(imagemImageView);
+
+            compartilharBotao.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    noticiaListener.compartilharNoticia(noticia);
+                }
+            });
         }
     }
 }

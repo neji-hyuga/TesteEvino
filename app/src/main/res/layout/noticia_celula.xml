@@ -10,11 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        android:padding="8dp"
-        android:backgroundTint="@color/azulEscuro">
+        android:backgroundTint="@color/azulEscuro"
+        android:padding="32dp"
+        app:cardCornerRadius="8dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -24,47 +24,52 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
-                tools:src="@mipmap/ic_launcher"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/noticia_titulo_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_width="282dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="16dp"
                 android:lines="1"
+                android:textColor="@color/verdeClaro"
                 android:textSize="14dp"
                 android:textStyle="bold"
-                android:textColor="@color/verdeClaro"
-                tools:text="TextView"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noticia_imagem_image_view"
+                tools:text="TextView" />
 
             <TextView
                 android:id="@+id/noticia_texto_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_width="279dp"
+                android:layout_height="27dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:lines="1"
+                android:textColor="@color/verdeClaro"
                 android:textSize="10dp"
                 android:textStyle="italic"
-                android:textColor="@color/verdeClaro"
-                tools:text="TextView"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noticia_titulo_text_view"
+                tools:text="TextView" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/compartilhar_noticia_btn"-->
-<!--                android:layout_width="24dp"-->
-<!--                android:layout_height="24dp"-->
-<!--                android:layout_gravity="end"-->
-<!--                android:layout_margin="16dp"-->
-<!--                android:src="@drawable/icone_compartilhar"/>-->
+            <ImageView
+                android:id="@+id/compartilhar_noticia_btn"
+                android:layout_width="18dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/icone_compartilhar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/noticia_imagem_image_view"
+                app:layout_constraintHorizontal_bias="0.707"
+                app:layout_constraintStart_toEndOf="@+id/noticia_titulo_text_view" />
 
 
-
-        </LinearLayout>
-
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.cardview.widget.CardView>

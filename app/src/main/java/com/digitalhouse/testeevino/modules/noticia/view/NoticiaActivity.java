@@ -65,4 +65,13 @@ public class NoticiaActivity extends AppCompatActivity implements NoticiaListene
 
         startActivity(intent);
     }
+
+    public void compartilharNoticia(Noticia noticia) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TITLE, noticia.getTitle());
+        intent.putExtra(Intent.EXTRA_SUBJECT, noticia.getUrl());
+        startActivity(Intent.createChooser(intent, "Compartilhar"));
+
+    }
 }
