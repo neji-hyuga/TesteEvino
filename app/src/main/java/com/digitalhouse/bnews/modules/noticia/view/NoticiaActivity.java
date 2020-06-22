@@ -1,14 +1,13 @@
 package com.digitalhouse.bnews.modules.noticia.view;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.ProgressBar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
 
 import com.digitalhouse.bnews.R;
 import com.digitalhouse.bnews.listener.NoticiaListener;
@@ -21,9 +20,9 @@ import java.util.ArrayList;
 
 public class NoticiaActivity extends AppCompatActivity implements NoticiaListener {
 
-    private ProgressBar progressBar;
+    //private ProgressBar progressBar;
     private RecyclerView noticiaRecyclerView;
-    private String search = "bitcoin";
+    private String search = "covid";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class NoticiaActivity extends AppCompatActivity implements NoticiaListene
         ArrayList<Noticia> noticiaArrayList = new ArrayList<>();
 
         noticiaRecyclerView = findViewById(R.id.noticia_recycler_view);
-        progressBar = findViewById(R.id.progress_bar_noticia);
+        //progressBar = findViewById(R.id.progress_bar_noticia);
         NoticiaAdapter noticiaAdapter = new NoticiaAdapter(noticiaArrayList, this);
 
 
@@ -48,7 +47,6 @@ public class NoticiaActivity extends AppCompatActivity implements NoticiaListene
         noticiaViewModel.getNoticiaLiveData()
                 .observe(this, noticiaList -> {
                     noticiaAdapter.adicionarNoticia(noticiaList);
-                    progressBar.setVisibility(View.GONE);
                 });
 
     }

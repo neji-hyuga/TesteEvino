@@ -36,7 +36,8 @@ public class NoticiaViewModel extends AndroidViewModel {
                 noticiaRepository.getNoticiaListApi(search)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
-                .subscribe(noticias -> noticiaLiveData.setValue(noticias), throwable -> throwable.printStackTrace())
+                .subscribe(noticias -> noticiaLiveData.setValue(noticias),
+                        throwable -> throwable.printStackTrace())
 
         );
 

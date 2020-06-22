@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azulEscuro"
-    tools:context=".modules.login.view.LoginActivity">
+    tools:context="com.digitalhouse.bnews.modules.signIn.view.SignInActivity">
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
         android:layout_marginTop="32dp"
-        android:contentDescription="@string/n"
+        android:src="@drawable/icone_newsxxxhdpi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icone_newsxxxhdpi" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="create a new user"
         android:textColor="@color/verdeClaro"
-        android:textSize="32sp"
-        android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="64dp"
         android:background="@color/verdeClaro"
@@ -45,7 +46,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,31 +59,17 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/usuario"
-                android:textColorHint="@color/azulEscuro">
+                android:hint="name">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_usuario_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/azulEscuro" />
+                    android:inputType="text"
+                    android:textColor="@color/azulEscuro"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/senha"
-                android:textColorHint="@color/azulEscuro">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_senha_edit_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberPassword"
-                    android:textColor="@color/azulEscuro" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/login_button_ok_id"
@@ -92,7 +80,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="@color/azulEscuro"
-                android:text="@string/login"
+                android:text="register"
                 android:textColor="@color/verdeClaro" />
 
             <TextView
@@ -109,5 +97,7 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
